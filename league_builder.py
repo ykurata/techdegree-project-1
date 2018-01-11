@@ -31,7 +31,7 @@ def split_players():
 
     return sharks, dragons, raptors
 
-# Convert lists
+# Convert lists into dictionary
 def list_in_dict(sharks, dragons, raptors):
     teams.update({"sharks":sharks})
     teams.update({"dragons":dragons})
@@ -42,6 +42,7 @@ def write_in_file():
     with open("teams.txt", "a") as file:
         file.write("Sharks \n")
         for value in teams["sharks"]:
+            # Turn a list to a string
             player_info = ", ".join(value)
             file.write(player_info + "\n")
 
